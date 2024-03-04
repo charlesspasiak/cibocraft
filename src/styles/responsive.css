@@ -1,11 +1,33 @@
-/* @media screen and (min-width: 500px) {
-  .header__menu {
-    display: none;
-  }
-} */
+@media screen and (max-width: 499px) {
+  .nav {
+    z-index: 10;
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
 
-/* @media (min-width: 500px) {
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(0, -700px);
+    transform: translate(0, -700px);
+
+    /* Optionally, we animate the drawer. */
+    /* transition: transform 0.7s ease; */
+  }
+
+  .open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 583px) {
   .header__menu {
     display: none;
   }
-} */
+}
