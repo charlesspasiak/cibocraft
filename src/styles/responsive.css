@@ -1,33 +1,46 @@
-@media screen and (max-width: 499px) {
-  .nav {
-    z-index: 10;
-    background-color: #fff;
-    width: 100%;
-    position: absolute;
-
-    /* This trasform moves the drawer off canvas. */
-    -webkit-transform: translate(0, -700px);
-    transform: translate(0, -700px);
-
-    /* Optionally, we animate the drawer. */
-    /* transition: transform 0.7s ease; */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
   }
 
-  .open {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+  #hamburger {
+    display: none;
   }
 
-  .nav__item {
-    display: list-item;
-    border-bottom: 1px solid #e0e0e0;
-    width: 100%;
-    text-align: left;
+  #nav-menu {
+    display: block;
+    position: static;
+    background-color: transparent;
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: none;
+  }
+
+  .nav__list {
+    display: flex;
   }
 }
 
-@media screen and (min-width: 583px) {
-  .header__menu {
-    display: none;
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
   }
 }

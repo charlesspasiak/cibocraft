@@ -4,12 +4,23 @@ import '../styles/responsive.css';
 
 console.log('Hello Coders! :)');
 
-const menu = document.querySelector('#menu');
-const hero = document.querySelector('.hero');
-const main = document.querySelector('main');
-const drawer = document.querySelector('#drawer');
+// Navbar Fixed
+window.onscroll = () => {
+  const header = document.querySelector('header');
+  const fixedNav = header.offsetTop;
 
-menu.addEventListener('click', function (event) {
-  drawer.classList.toggle('open');
-  event.stopPropagation();
+  if (window.scrollY > fixedNav) {
+    header.classList.add('navbar-fixed');
+  } else {
+    header.classList.remove('navbar-fixed');
+  }
+};
+
+// Hamburger
+const hamburger = document.querySelector('#hamburger');
+const navMenu = document.querySelector('#nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('hamburger-active');
+  navMenu.classList.toggle('hidden');
 });
