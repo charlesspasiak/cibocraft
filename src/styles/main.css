@@ -238,3 +238,26 @@ nav > ul > li > a:hover {
   color: #FF6347;
   margin-bottom: 10px;
 }
+
+/* Footer*/
+.site-footer {
+  background-color: #4c9910;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 150px; /* Adjust logo size as needed */
+}
+
+.footer-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
