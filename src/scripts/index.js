@@ -24,3 +24,46 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('hamburger-active');
   navMenu.classList.toggle('hidden');
 });
+
+// Fetch data from JSON file
+fetch('../public/data/DATA.json')
+    .then(response => response.json())
+    .then(data => {
+        const restaurants = data.restaurants;
+        const restaurantList = document.getElementById('restaurantList');
+
+        // Iterate through each restaurant
+        restaurants.forEach(restaurant => {
+            // Create restaurant card element
+            const restaurantCard = document.createElement('div');
+            restaurantCard.classList.add('restaurant-card');
+
+            // Create image element
+            const image = document.createElement('img');
+            image.src = restaurant.pictureId;
+            image.alt = restaurant.name;
+
+            // Create heading element
+            const heading = document.createElement('h2');
+            heading.textContent = restaurant.name;
+
+            // Create paragraph element for description
+            const description = document.createElement('p');
+            description.textContent = restaurant.description;
+
+            // Create paragraph element for rating
+            const rating = document.createElement('p');
+            rating.classList.add('rating');
+            rating.textContent = `Rating: ${restaurant.rating}`;
+
+            // Append elements to restaurant card
+            restaurantCard.appendChild(image);
+            restaurantCard.appendChild(heading);
+            restaurantCard.appendChild(description);
+            restaurantCard.appendChild(rating);
+
+            // Append restaurant card to restaurant list
+            restaurantList.appendChild(restaurantCard);
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));

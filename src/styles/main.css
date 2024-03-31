@@ -200,3 +200,41 @@ nav > ul > li > a:hover {
 .btn:hover {
   background-color: #4c7500;
 }
+
+/* Restaurant List Styles */
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.restaurant-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.restaurant-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.restaurant-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.restaurant-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.restaurant-card .rating {
+  font-size: 1rem;
+  color: #FF6347;
+  margin-bottom: 10px;
+}
