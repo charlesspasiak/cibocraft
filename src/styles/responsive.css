@@ -26,15 +26,34 @@
     font-size: 24px;
   }
 
-  .hero > .hero__inner > img {
-    width: 100%;
+  .hero {
     height: 341px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 23px;
+    margin-bottom: 30px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
   }
 }
 
@@ -43,8 +62,7 @@
     max-width: 1024px;
   }
 
-  .hero > .hero__inner > img {
-    width: 100%;
+  .hero {
     height: 454px;
   }
 }
@@ -54,8 +72,7 @@
     max-width: 1280px;
   }
 
-  .hero > .hero__inner > img {
-    width: 100%;
+  .hero {
     height: 550px;
   }
 }

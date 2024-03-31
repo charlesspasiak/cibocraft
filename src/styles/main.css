@@ -96,19 +96,15 @@ nav > ul > li > a {
   text-decoration: none;
   display: block;
   font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
-  padding-top: 0.5rem; /* 8px */
-  padding-bottom: 0.5rem; /* 8px */
-  padding-inline: 12px;
+  line-height: 1.5rem; /* 24px */  
   color: #000;
-  transition: all 0.3s ease-in;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 nav > ul > li > a:hover {
-  color: white;
-  background-color: #4c9700;
-  border-radius: 16px;
-  padding-inline: 8px;
+  border-bottom: 2px solid #4c9700;
+  color: #4c9700;
 }
 
 #hamburger {
@@ -163,12 +159,44 @@ nav > ul > li > a:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Jumbotron */
+/* Hero*/
 .hero {
   margin-top: 91px;
+  background-image: url('../public/images/heros/hero-image_4.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.hero > .hero__inner > img {
-  width: 100%;
-  height: 240px;
+.hero-content {
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4c9700;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4c7500;
 }
