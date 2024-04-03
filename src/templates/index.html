@@ -6,6 +6,8 @@
     <title>CiboCraft</title>
   </head>
   <body>
+    <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+    
     <!-- Header Start -->
     <header>
       <div class="container">
@@ -16,7 +18,7 @@
             </a>
           </div>
           <div class="header__menu">
-            <button id="hamburger" name="hamburger" type="button">
+            <button id="hamburger" name="hamburger" type="button" aria-label="hamburger">
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
@@ -26,7 +28,9 @@
               <ul class="nav__list">
                 <li class="nav__item"><a href="http://localhost:3000" class="nav-link">Home</a></li>
                 <li class="nav__item"><a href="#" class="nav-link">Favorite</a></li>
-                <li class="nav__item"><a href="https://github.com/charlesspasiak" class="nav-link">About Us</a></li>
+                <li class="nav__item">
+                  <a href="https://github.com/charlesspasiak" class="nav-link">About Us</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -36,21 +40,21 @@
     <!-- Header End -->
 
     <!-- Hero Start -->
-    <section class="hero">
+    <div class="hero">
       <div class="hero-content">
         <h1>Welcome to Cibo Craft</h1>
-        <p>Discover the flavors of our world-class cuisine.</p>
-        <a href="#" class="btn">View Menu</a>
+        <p>Your ultimate destination for exploring a delectable world of culinary delights!</p>
+        <a href="#explore" class="btn">Explore Now</a>
       </div>
-    </section>
+    </div>
     <!-- Hero End -->
 
-    <!-- Restaurant List Start -->
-    <section class="restaurant container">
-      <h2>Explore Restaurant</h2>
-      <div class="restaurant-list" id="restaurantList"></div>
-    </section>
-    <!-- Restaurant List End -->
+    <main id="maincontent">
+      <article class="restaurant container">
+        <h2 id="explore">Explore Restaurant</h2>
+        <div class="restaurant-list" id="restaurantList"></div>
+      </article>
+    </main>
 
     <!-- Footer Start -->
     <footer class="site-footer">
