@@ -1,43 +1,40 @@
-fetch('../public/data/DATA.json')
-  .then((response) => response.json())
-  .then((data) => {
-    const restaurants = data.restaurants;
-    const restaurantList = document.getElementById('restaurantList');
+import DATA from '../../scripts/../public/data/DATA.json';
 
-    restaurants.forEach((restaurant) => {
-      const restaurantCard = document.createElement('div');
-      restaurantCard.classList.add('restaurant-card');
+const restaurantList = document.getElementById('restaurantList');
+const restaurants = DATA.restaurants;
 
-      const imageContainer = document.createElement('div');
-      imageContainer.classList.add('image-container');
+restaurants.forEach((restaurant) => {
+  const restaurantCard = document.createElement('div');
+  restaurantCard.classList.add('restaurant-card');
 
-      const image = document.createElement('img');
-      image.src = restaurant.pictureId;
-      image.alt = restaurant.name;
+  const imageContainer = document.createElement('div');
+  imageContainer.classList.add('image-container');
 
-      const city = document.createElement('div');
-      city.classList.add('city');
-      city.textContent = restaurant.city;
+  const image = document.createElement('img');
+  image.src = restaurant.pictureId;
+  image.alt = restaurant.name;
 
-      imageContainer.appendChild(image);
-      imageContainer.appendChild(city);
+  const city = document.createElement('div');
+  city.classList.add('city');
+  city.textContent = restaurant.city;
 
-      const heading = document.createElement('h2');
-      heading.textContent = restaurant.name;
+  imageContainer.appendChild(image);
+  imageContainer.appendChild(city);
 
-      const description = document.createElement('p');
-      description.textContent = restaurant.description;
+  const heading = document.createElement('h2');
+  heading.textContent = restaurant.name;
 
-      const rating = document.createElement('p');
-      rating.classList.add('rating');
-      rating.textContent = `Rating: ${restaurant.rating}`;
+  const description = document.createElement('p');
+  description.textContent = restaurant.description;
 
-      restaurantCard.appendChild(imageContainer);
-      restaurantCard.appendChild(rating);
-      restaurantCard.appendChild(heading);
-      restaurantCard.appendChild(description);
+  const rating = document.createElement('p');
+  rating.classList.add('rating');
+  rating.textContent = `Rating: ${restaurant.rating}`;
 
-      restaurantList.appendChild(restaurantCard);
-    });
-  })
-  .catch((error) => console.error('Error fetching data:', error));
+  restaurantCard.appendChild(imageContainer);
+  restaurantCard.appendChild(rating);
+  restaurantCard.appendChild(heading);
+  restaurantCard.appendChild(description);
+
+  restaurantList.appendChild(restaurantCard);
+});
