@@ -1,7 +1,7 @@
-import DATA from '../../scripts/../public/data/DATA.json';
+import DATA from '../../public/data/DATA.json';
 
 const restaurantList = document.getElementById('restaurantList');
-const restaurants = DATA.restaurants;
+const { restaurants } = DATA;
 
 restaurants.forEach((restaurant) => {
   const restaurantCard = document.createElement('div');
