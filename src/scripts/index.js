@@ -2,6 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
 import './components/restaurant-card';
+import App from './views/app';
 
 // Navbar Fixed
 window.onscroll = () => {
@@ -15,18 +16,8 @@ window.onscroll = () => {
   }
 };
 
-// Hamburger
-const hamburger = document.querySelector('#hamburger');
-const navMenu = document.querySelector('.nav__list');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('.nav__list'),
+  content: document.querySelector('#maincontent'),
 });
-
-document.querySelectorAll('.nav-link').forEach((link) =>
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-  })
-);
