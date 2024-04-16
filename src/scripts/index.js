@@ -21,3 +21,11 @@ const app = new App({
   drawer: document.querySelector('.nav__list'),
   content: document.querySelector('#maincontent'),
 });
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+ 
+window.addEventListener('load', () => {
+  app.renderPage();
+});
