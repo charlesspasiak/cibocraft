@@ -1,7 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
-import './components/restaurant-card';
+// import './components/restaurant-card';
 import App from './views/app';
 
 // Navbar Fixed

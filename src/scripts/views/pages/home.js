@@ -1,12 +1,20 @@
+import RestaurantDbSource from '../../data/restaurantsdb-source';
+import { createRestaurantItemTemplate } from '../../templates/template-creator';
+
 const Home = {
   async render() {
     return `
-      <h2 id="explore">Explore Restaurant</h2>
+      <article class="restaurant container">
+        <h2 id="explore">Explore Restaurant</h2>
+        <div class="restaurant-list" id="restaurantList"></div>
+      </article>
     `;
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const listOfRestaurant = await RestaurantDbSource.listOfRestaurant();
+    const restaurantContainer = document.querySelector('#restaurantList');
+    createRestaurantItemTemplate(listOfRestaurant, restaurantContainer);
   },
 };
 
