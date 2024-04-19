@@ -1,13 +1,19 @@
 {
   "id": "cibo-craft-pwa-1",
-  "start_url": "./index.html",
-  "name": "Cibo Crtaf",
-  "short_name": "CCraft",
+  "start_url": "/index.html",
+  "name": "Cibo Craft",
+  "short_name": "Cibo Craft",
   "description": "Discover a curated selection of restaurants",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#00f700",
   "icons": [
+    {
+      "src": "../public/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "../public/icons/icon512_maskable.png",
       "sizes": "512x512",
