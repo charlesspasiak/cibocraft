@@ -10,14 +10,14 @@ const Detail = {
       <div id="likeButtonContainer"></div>
     `;
   },
- 
+
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantDbSource.detailOfRestauran(url.id);
     const restaurantContainer = document.querySelector('#restaurant');
 
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-    
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
@@ -31,5 +31,5 @@ const Detail = {
     });
   },
 };
- 
+
 export default Detail;

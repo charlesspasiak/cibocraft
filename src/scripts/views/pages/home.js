@@ -21,7 +21,7 @@ const Home = {
   async afterRender() {
     const listOfRestaurant = await RestaurantDbSource.listOfRestaurant();
     const restaurantContainer = document.querySelector('#restaurantList');
-    
+
     listOfRestaurant.forEach((restaurant) => {
       const restaurantCard = createRestaurantCardTemplate(restaurant);
       restaurantContainer.innerHTML += restaurantCard;

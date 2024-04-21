@@ -59,16 +59,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <div class="restaurant-detail__content__reviews">
         <div class="restaurant-detail__content__reviews__item">
           ${restaurant.customerReviews
-            .map(
-              (customerReview) => `
-            <div class="review-box">
-              <p><strong>${customerReview.name}</strong></p>
-              <p class="restaurant-detail__content__reviews__item__date">${customerReview.date}</p>
-              <p class="restaurant-detail__content__reviews__item__review">${customerReview.review}</p>
-            </div>
-          `
-            )
-            .join('')}
+    .map(
+      (customerReview) => `
+        <div class="review-box">
+          <p><strong>${customerReview.name}</strong></p>
+          <p class="restaurant-detail__content__reviews__item__date">${customerReview.date}</p>
+          <p class="restaurant-detail__content__reviews__item__review">${customerReview.review}</p>
+        </div>
+      `,
+    )
+    .join('')}
         </div>
       </div>
     </div>
