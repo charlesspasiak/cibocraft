@@ -1,7 +1,6 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
@@ -9,48 +8,53 @@ module.exports = {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    assetModuleFilename: 'images/[hash][ext]',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpe?g|gif|ico)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
       },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
+      template: path.resolve(__dirname, 'src/templates/index.html'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/public/'),
+          to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
       runtimeCaching: [
         {
-          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'restaurantdb-api',
+            cacheName: 'restaurant-api',
           },
         },
         {
           urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'restaurantdb-image-api',
+            cacheName: 'restaurant-image-api',
           },
         },
       ],
