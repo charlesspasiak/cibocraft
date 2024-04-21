@@ -22,7 +22,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <div class="restaurant-detail__header__info">
         <p class="restaurant-detail__header__info__rating">Rating: ${restaurant.rating}</p>
         <div class="restaurant-detail__header__info__categories">
-            ${restaurant.categories.map(category => `<span>${category.name}</span>`).join('')}
+            ${restaurant.categories.map((category) => `<span>${category.name}</span>`).join('')}
         </div>
         <h2>${restaurant.name}</h2>
         <p class="restaurant-detail__header__info__address">${restaurant.address}</p>
@@ -36,7 +36,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <div>
             <h4>Foods</h4>
             <ul>
-              ${restaurant.menus.foods.map(food => `<li>${food.name}</li>`).join('')}
+              ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
             </ul>
           </div>
         </div>
@@ -44,7 +44,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <div>
             <h4>Drinks</h4>
             <ul>
-              ${restaurant.menus.drinks.map(drink => `<li>${drink.name}</li>`).join('')}
+              ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
             </ul>
           </div>
         </div>
@@ -54,18 +54,38 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <h3>Customer Reviews</h3>
       <div class="restaurant-detail__content__reviews">
         <div class="restaurant-detail__content__reviews__item">
-          ${restaurant.customerReviews.map((customerReview) => `
+          ${restaurant.customerReviews
+            .map(
+              (customerReview) => `
             <div class="review-box">
               <p><strong>${customerReview.name}</strong></p>
               <p class="restaurant-detail__content__reviews__item__date">${customerReview.date}</p>
               <p class="restaurant-detail__content__reviews__item__review">${customerReview.review}</p>
             </div>
-          `).join('')}
+          `
+            )
+            .join('')}
         </div>
       </div>
     </div>
   </div>
 `;
 
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
 
-export { createRestaurantCardTemplate, createRestaurantDetailTemplate };
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createRestaurantCardTemplate,
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
