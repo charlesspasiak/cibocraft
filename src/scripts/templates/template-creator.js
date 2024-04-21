@@ -5,8 +5,10 @@ const createRestaurantCardTemplate = (restaurant) => `
     <div class="image-container">
       <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
       <div class="city">${restaurant.city}</div>
+      <div class="restaurant-card__header__rating">
+        <p class="rating"><span class="rating-star">⭐️</span> ${restaurant.rating}</p>
+      </div>
     </div>
-    <p class="rating">Rating: ${restaurant.rating}</p>
     <h3><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
     <p>${restaurant.description}</p>
   </div>
@@ -20,7 +22,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <div class="city">${restaurant.city}</div>
       </div>
       <div class="restaurant-detail__header__info">
-        <p class="restaurant-detail__header__info__rating">Rating: ${restaurant.rating}</p>
+        <div class="restaurant-detail__header__rating">
+          <p class="rating"><span class="rating-star">⭐️</span> ${restaurant.rating}</p>
+        </div>
         <div class="restaurant-detail__header__info__categories">
             ${restaurant.categories.map((category) => `<span>${category.name}</span>`).join('')}
         </div>

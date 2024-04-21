@@ -18,6 +18,7 @@
     height: fit-content;
     text-align: center;
     transition: 0.3s;
+    z-index: 5;
   }
 
   .nav__list.active {
@@ -29,10 +30,6 @@
   .container {
     max-width: 640px;
     padding-inline: 24px;
-  }
-
-  header {
-    background-color: transparent;
   }
 
   nav > ul > li {
@@ -86,17 +83,12 @@
   }
 
   .restaurant h2 {
-    text-align: center;
     font-size: 40px;
     font-weight: bold;
   }
 
   #explore {
     padding-top: 120px;
-  }
-
-  #favorite {
-    padding-top: 30px;
   }
 
   .restaurant-card {
@@ -131,7 +123,7 @@
   }
 
   .image-container img {
-    height: auto;
+    height: 200px;
     border-top-left-radius: 5px;
   }
 
@@ -143,7 +135,8 @@
     margin-top: 20px;
   }
 
-  .restaurant-detail__content, .restaurant-detail__review {
+  .restaurant-detail__content,
+  .restaurant-detail__review {
     border: 1px solid #ccc;
     border-radius: 8px;
   }
@@ -152,7 +145,8 @@
     font-size: 28px;
   }
 
-  .restaurant-detail__content h3, .restaurant-detail__review h3 {
+  .restaurant-detail__content h3,
+  .restaurant-detail__review h3 {
     width: fit-content;
     margin-inline: auto;
     padding-inline: 50px;
@@ -173,7 +167,8 @@
     display: flex;
   }
 
-  .restaurant-detail__content__menu__foods, .restaurant-detail__content__menu__drinks {
+  .restaurant-detail__content__menu__foods,
+  .restaurant-detail__content__menu__drinks {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -192,7 +187,8 @@
     font-size: 18px;
   }
 
-  .restaurant-detail__content__reviews__item__date, .restaurant-detail__content__reviews__item__review {
+  .restaurant-detail__content__reviews__item__date,
+  .restaurant-detail__content__reviews__item__review {
     font-size: 16px;
   }
 }
@@ -224,10 +220,6 @@
 
   .restaurant-list {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .restaurant-card p {
-    text-align: justify;
   }
 }
 
