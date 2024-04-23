@@ -1,7 +1,7 @@
 import CONFIG from '../global/config';
 
 const createRestaurantCardTemplate = (restaurant) => `
-  <div class="restaurant-card">
+  <div class="restaurant-card restaurant-item">
     <div class="image-container">
       <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
       <div class="city">${restaurant.city}</div>
