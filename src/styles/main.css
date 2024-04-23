@@ -419,3 +419,11 @@ nav > ul > li > a:hover {
 #favorite {
   padding-top: 90px;
 }
+
+.restaurant-item__not__found {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}

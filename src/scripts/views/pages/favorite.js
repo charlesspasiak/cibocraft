@@ -14,11 +14,18 @@ const Favorite = {
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const restaurantContainer = document.querySelector('#restaurantList');
-
-    restaurants.forEach((restaurant) => {
-      const restaurantCard = createRestaurantCardTemplate(restaurant);
-      restaurantContainer.innerHTML += restaurantCard;
-    });
+    if (restaurants.length) {
+      restaurants.forEach((restaurant) => {
+        const restaurantCard = createRestaurantCardTemplate(restaurant);
+        restaurantContainer.innerHTML += restaurantCard;
+      });
+    } else {
+      restaurantContainer.innerHTML = `
+        <div class="restaurant-item__not__found">
+          Belum ada restaurant yand disukai!!!
+        </div>
+      `;
+    }
   },
 };
 

@@ -9,7 +9,7 @@ const createRestaurantCardTemplate = (restaurant) => `
         <p class="rating"><span class="rating-star">⭐️</span> ${restaurant.rating}</p>
       </div>
     </div>
-    <h3><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
+    <h3 class="restaurant__title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
     <p>${restaurant.description}</p>
   </div>
 `;
