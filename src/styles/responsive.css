@@ -199,12 +199,12 @@
   }
 
   .hero-content h1 {
-    font-size: 4rem;
+    font-size: 50px;
     margin-bottom: 20px;
   }
 
   .hero-content p {
-    font-size: 2rem;
+    font-size: 25px;
     margin-bottom: 30px;
   }
 }
@@ -216,6 +216,16 @@
 
   .hero {
     height: 454px;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
 
   .restaurant-list {
@@ -230,5 +240,11 @@
 
   .hero {
     height: 550px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero img {
+    object-fit: cover;
   }
 }

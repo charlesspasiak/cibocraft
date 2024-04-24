@@ -5,6 +5,10 @@ const Home = {
   async render() {
     return `
       <div class="hero">
+        <picture>
+          <source media="(max-width: 600px)" srcset="./images/heros/hero-image_4-small.jpg">
+          <img src="./images/heros/hero-image_4-large.jpg" alt="Hero Image" class="hero-background">
+        </picture>
         <div class="hero-content">
           <h1>Welcome to Cibo Craft</h1>
           <p>Your ultimate destination for exploring a delectable world of culinary delights!</p>

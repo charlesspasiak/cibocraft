@@ -119,10 +119,10 @@ nav > ul > li > a:hover {
 
 /* Hero*/
 .hero {
+  position: relative;
+  overflow: hidden;
+
   margin-top: 90px;
-  background-image: url('../public/images/heros/hero-image_4.jpg');
-  background-size: cover;
-  background-position: center;
   height: 240px;
   display: flex;
   justify-content: center;
@@ -130,7 +130,20 @@ nav > ul > li > a:hover {
   width: 100%;
 }
 
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+
   text-align: center;
   color: #fff;
 }
@@ -185,10 +198,10 @@ nav > ul > li > a:hover {
 }
 
 .restaurant-card > h3,
-  .restaurant-card > rating,
-  .restaurant-card > p {
-    padding: 8px;
-  }
+.restaurant-card > rating,
+.restaurant-card > p {
+  padding: 8px;
+}
 
 .restaurant-list {
   display: flex;
@@ -251,7 +264,8 @@ nav > ul > li > a:hover {
   -webkit-box-orient: vertical;
 }
 
-.restaurant-card .rating-star, .restaurant-detail__header__info__rating {
+.restaurant-card .rating-star,
+.restaurant-detail__header__info__rating {
   font-size: 18px;
   line-height: 2rem;
   color: #f5c518;
@@ -267,13 +281,13 @@ nav > ul > li > a:hover {
   align-items: center;
   justify-content: center;
   background-color: #db0000;
-  
+
   position: fixed;
   top: 170px;
   right: 25px;
   border-radius: 50%;
   border: 0;
-  
+
   font-size: 18px;
   color: white;
   cursor: pointer;
@@ -367,7 +381,8 @@ nav > ul > li > a:hover {
   margin-top: 20px;
 }
 
-.restaurant-detail__content h3, .restaurant-detail__review h3 {
+.restaurant-detail__content h3,
+.restaurant-detail__review h3 {
   margin: 40px 0 20px;
   text-align: center;
   background-color: #00f700;

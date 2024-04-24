@@ -3,7 +3,10 @@ import CONFIG from '../global/config';
 const createRestaurantCardTemplate = (restaurant) => `
   <div class="restaurant-card restaurant-item">
     <div class="image-container">
-      <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
+      <picture>
+        <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}">
+        <img src="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}" alt="${restaurant.name}">
+      </picture>
       <div class="city">${restaurant.city}</div>
       <div class="restaurant-card__header__rating">
         <p class="rating"><span class="rating-star">⭐️</span> ${restaurant.rating}</p>
@@ -18,7 +21,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div class="restaurant-detail">
     <div class="restaurant-detail__header">
       <div class="image-container">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
+        <picture>
+          <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}">
+          <img src="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}" alt="${restaurant.name}">
+        </picture>
         <div class="city">${restaurant.city}</div>
       </div>
       <div class="restaurant-detail__header__info">
