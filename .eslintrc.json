@@ -3,8 +3,7 @@
     "browser": true,
     "es2021": true,
     "node": true,
-    "jest": true,
-    "codecept": true
+    "jest": true
   },
   "extends": ["airbnb-base"],
   "parserOptions": {

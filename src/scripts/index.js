@@ -1,5 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import 'lazysizes';
+import lazySizes from 'lazysizes';
 import '../styles/main.css';
 import '../styles/responsive.css';
 import App from './views/app';
@@ -36,4 +36,3 @@ window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
-

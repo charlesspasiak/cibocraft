@@ -4,8 +4,8 @@ const createRestaurantCardTemplate = (restaurant) => `
   <div class="restaurant-card restaurant-item">
     <div class="image-container">
       <picture>
-        <source media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}">
-        <img data-src="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}" alt="${restaurant.name}" class="lazyload">
+        <source media="(max-width: 600px)" data-srcset="${`${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}`}">
+        <img data-src="${`${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}`}" alt="${restaurant.name}" class="lazyload">
       </picture>
       <div class="city">${restaurant.city}</div>
       <div class="restaurant-card__header__rating">
@@ -22,8 +22,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <div class="restaurant-detail__header">
       <div class="image-container">
         <picture>
-          <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}">
-          <img src="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}" alt="${restaurant.name}">
+          <source media="(max-width: 600px)" srcset="${`${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}`}">
+          <img src="${`${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}`}" alt="${restaurant.name}">
         </picture>
         <div class="city">${restaurant.city}</div>
       </div>
