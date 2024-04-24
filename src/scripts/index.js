@@ -1,8 +1,10 @@
 import 'regenerator-runtime'; /* for async await transpile */
+import 'lazysizes';
 import '../styles/main.css';
 import '../styles/responsive.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 // Navbar Fixed
 window.onscroll = () => {
@@ -26,7 +28,12 @@ window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  lazySizes.init();
+});
+
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
 });
+
