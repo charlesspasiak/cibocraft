@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../public/images/favicon.ico" type="image/x-icon" />
+
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="manifest" href="./app.webmanifest" />
+
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
     <title>CiboCraft</title>
   </head>
   <body>
-    <a href="#maincontent" class="skip-link">Menuju ke konten</a>
-    
+    <a href="#explore" class="skip-link">Menuju ke konten</a>
+
     <!-- Header Start -->
     <header>
       <div class="container">
         <div class="header__inner">
           <div class="header__logo">
             <a href="http://localhost:3000">
-              <img src="../public/images/logo.svg" alt="logo" width="180" height="90" />
+              <img src="./images/logo.svg" alt="logo" width="180" height="90" />
             </a>
           </div>
           <div class="header__menu">
@@ -27,8 +32,8 @@
 
             <nav id="nav-menu">
               <ul class="nav__list">
-                <li class="nav__item"><a href="http://localhost:3000" class="nav-link">Home</a></li>
-                <li class="nav__item"><a href="#" class="nav-link">Favorite</a></li>
+                <li class="nav__item"><a href="#/" class="nav-link">Home</a></li>
+                <li class="nav__item"><a href="#/favorite" class="nav-link">Favorite</a></li>
                 <li class="nav__item">
                   <a href="https://github.com/charlesspasiak" class="nav-link">About Us</a>
                 </li>
@@ -40,29 +45,14 @@
     </header>
     <!-- Header End -->
 
-    <!-- Hero Start -->
-    <div class="hero">
-      <div class="hero-content">
-        <h1>Welcome to Cibo Craft</h1>
-        <p>Your ultimate destination for exploring a delectable world of culinary delights!</p>
-        <a href="#explore" class="btn">Explore Now</a>
-      </div>
-    </div>
-    <!-- Hero End -->
-
-    <main id="maincontent">
-      <article class="restaurant container">
-        <h2 id="explore">Explore Restaurant</h2>
-        <div class="restaurant-list" id="restaurantList"></div>
-      </article>
-    </main>
+    <main id="maincontent"></main>
 
     <!-- Footer Start -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="../public/images/logo-footer.svg" alt="Footer Logo" />
+            <img src="./images/logo-footer.svg" alt="Footer Logo" />
           </div>
           <div class="footer-info">
             <p>&copy; 2024 Cibo Craft. All rights reserved.</p>
